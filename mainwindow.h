@@ -5,6 +5,8 @@
 #include <QMainWindow>
 #include <QPushButton>
 
+class MenuWindow;
+
 //==== Класс главного окна ====
 class MainWindow : public QMainWindow
 {
@@ -14,11 +16,13 @@ public:
     MainWindow(QWidget *parent = nullptr); // конструктор
     ~MainWindow();                         //дестркуртор
 private slots:
-    // void logInClicked();
+    void logInClicked();
 
 private:
     QLineEdit *login;
     QLineEdit *password;
     QPushButton *logIn;
+
+    MenuWindow *menuWindow;
 };
 #endif // MAINWINDOW_H

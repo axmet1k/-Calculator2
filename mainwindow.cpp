@@ -4,6 +4,8 @@
 #include <QMessageBox>
 #include <QVBoxLayout>
 #include <QWidget>
+#include "calcwindow.h"
+#include "menuwindow.h"
 
 #define n 40
 
@@ -33,6 +35,15 @@ MainWindow::MainWindow(QWidget *parent)
     mainLayout->setSpacing(25);
     mainLayout->addLayout(formLayout);
     mainLayout->addWidget(logIn, 0, Qt::AlignVCenter);
+
+    connect(logIn, &QPushButton::clicked, this, &MainWindow::logInClicked);
 }
 
 MainWindow::~MainWindow() {}
+
+void MainWindow::logInClicked()
+{
+    menuWindow = new MenuWindow();
+    menuWindow->show();
+    hide();
+}
