@@ -6,11 +6,13 @@
 
 #define HEIGHT 60
 
+#define n 20
+
 CalcWindow::CalcWindow(QWidget *parent)
     : QWidget(parent)
 {
     this->setWindowTitle("Calculator");
-    this->resize(600, 200);
+    this->resize(550, 200);
     //QWidget *central = new QWidget(this);
     //this->setCentralWidget(central);
 
@@ -31,6 +33,8 @@ CalcWindow::CalcWindow(QWidget *parent)
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QHBoxLayout *inputLayout = new QHBoxLayout();
+    mainLayout->setContentsMargins(n, n, n, n);
+    mainLayout->setSpacing(15);
 
     inputLayout->addWidget(input1);
     inputLayout->addWidget(new QLabel("+", this));
