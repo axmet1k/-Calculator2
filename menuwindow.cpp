@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QVBoxLayout>
 #include <QWidget>
+#include "calcwindow.h"
 
 #define n 40
 #define h 40
@@ -34,5 +35,13 @@ MenuWindow::MenuWindow(QWidget *parent)
     layout->addWidget(calculator);
     layout->addWidget(catRadioButton);
     layout->addWidget(checkBox);
+
+    connect(calculator, &QPushButton::clicked, this, &MenuWindow::calculatorClicked);
 }
 MenuWindow::~MenuWindow() {}
+
+void MenuWindow::calculatorClicked()
+{
+    calcWindow = new CalcWindow();
+    calcWindow->show();
+}
