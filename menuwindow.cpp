@@ -5,25 +5,30 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
+#define n 40
+#define h 40
+
 MenuWindow::MenuWindow(QWidget *parent)
     : QWidget(parent)
 {
-    this->setWindowTitle("Меню");
+    this->setWindowTitle("Menu");
     this->resize(600, 200);
 
     label1 = new QLabel(this);
-    label1->setText("<h2>Выберите мини-программу</h2>");
+    label1->setText("<h3>Choose a mini-app</h3>");
 
-    catRadioButton = new QPushButton("Кот Пушин", this);
-    catRadioButton->setMinimumHeight(50);
-    checkBox = new QPushButton("Выбор", this);
-    checkBox->setMinimumHeight(50);
-    calculator = new QPushButton("Калькулятор", this);
-    calculator->setMinimumHeight(50);
-    game = new QPushButton("Игра - стрелярка", this);
-    game->setMinimumHeight(50);
+    catRadioButton = new QPushButton("Cat Pushin", this);
+    catRadioButton->setMinimumHeight(h);
+    checkBox = new QPushButton("Choice", this);
+    checkBox->setMinimumHeight(h);
+    calculator = new QPushButton("Calculator", this);
+    calculator->setMinimumHeight(h);
+    game = new QPushButton("Game - Shooter", this);
+    game->setMinimumHeight(h);
 
     QVBoxLayout *layout = new QVBoxLayout(this); // layout сразу на this
+    layout->setContentsMargins(n, n, n, n);
+    layout->setSpacing(15);
     layout->addWidget(label1);
     layout->addWidget(game);
     layout->addWidget(calculator);
