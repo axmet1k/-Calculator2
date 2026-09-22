@@ -8,24 +8,24 @@
 #include "menuwindow.h"
 
 #define n 40
-
+#define h 40
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    this->setWindowTitle("Авторизация в калькулятор");
+    this->setWindowTitle("Login to ...");
     this->resize(600, 200);
 
     QWidget *central = new QWidget(this);
     this->setCentralWidget(central);
 
     login = new QLineEdit(this);
-    login->setPlaceholderText("Введите логин");
+    login->setPlaceholderText("Enter login");
     password = new QLineEdit(this);
-    password->setPlaceholderText("Введите пароль");
+    password->setPlaceholderText("Enter password");
     password->setEchoMode(QLineEdit::Password);
 
-    logIn = new QPushButton("Авторизоваться", this);
-    logIn->setMinimumHeight(50);
+    logIn = new QPushButton("Log in", this);
+    logIn->setMinimumHeight(h);
     QFormLayout *formLayout = new QFormLayout;
     formLayout->addRow(tr("&Login:"), login);
     formLayout->addRow(tr("&Password:"), password);
