@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include "calcwindow.h"
+#include "catwindow.h"
 
 #define n 40
 #define h 40
@@ -37,6 +38,7 @@ MenuWindow::MenuWindow(QWidget *parent)
     layout->addWidget(checkBox);
 
     connect(calculator, &QPushButton::clicked, this, &MenuWindow::calculatorClicked);
+    connect(catRadioButton, &QPushButton::clicked, this, &MenuWindow::catClicked);
 }
 MenuWindow::~MenuWindow() {}
 
@@ -44,4 +46,9 @@ void MenuWindow::calculatorClicked()
 {
     calcWindow = new CalcWindow();
     calcWindow->show();
+}
+void MenuWindow::catClicked()
+{
+    catWindow = new CatWindow();
+    catWindow->show();
 }

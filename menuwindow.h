@@ -6,6 +6,7 @@
 #include <QWidget>
 
 class CalcWindow;
+class CatWindow;
 
 class MenuWindow : public QWidget
 {
@@ -15,6 +16,7 @@ public:
     ~MenuWindow();
 private slots:
     void calculatorClicked();
+    void catClicked();
 
 private:
     QLabel *label1;
@@ -24,6 +26,7 @@ private:
     QPushButton *game;
 
     CalcWindow *calcWindow;
+    CatWindow *catWindow;
 };
 
 #endif // MENUWINDOW_H
