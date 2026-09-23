@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>png/cofeCat.png</file>
+        <file>png/drawCat.png</file>
+        <file>png/readCat.png</file>
+        <file>png/sleepCat.png</file>
+        <file>png/studyCat.png</file>
+    </qresource>
+</RCC>
